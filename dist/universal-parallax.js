@@ -3,7 +3,7 @@
 * @author Marius Hansen <marius.o.hansen@gmail.com>
 * @license MIT
 * @description Easy parallax plugin using pure javascript. Cross browser support, including mobile platforms. Based on goodparallax
-* @copyright © Marius Hansen 2017
+* @copyright © Marius Hansen 2018
 */
 
 

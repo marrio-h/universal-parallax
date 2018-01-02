@@ -5,7 +5,7 @@
   "main": "dist/universal-parallax.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marrio-h/universalParallax.git"
+    "url": "https://github.com/marrio-h/universal-parallax.git"
   },
   "keywords": [
     "parallax",
@@ -19,7 +19,7 @@
 	"author": "Marius Hansen <marius.o.hansen@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/marrio-h/universalParallax/issues"
+    "url": "https://github.com/marrio-h/universal-parallax/issues"
   },
-  "homepage": "https://github.com/marrio-h/universalParallax#readme"
+  "homepage": "https://github.com/marrio-h/universal-parallax#readme"
 }
