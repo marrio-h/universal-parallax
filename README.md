@@ -1,6 +1,6 @@
 # Universal Parallax
 Easy parallax plugin using pure javascript. Cross browser support, including mobile platforms.
-[See demo here](https://github.com/marrio-h/universal-parallax/demo)
+[See demo here](https://marrio-h.github.io/universal-parallax/demo/)
 
 ### Features
 - Easy setup
