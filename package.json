@@ -1,0 +1,25 @@
+{
+  "name": "Universal Parallax",
+  "version": "1.0.0",
+  "description": "Easy parallax plugin using pure javascript. Also works on mobile platforms. Cross browser support.",
+  "main": "dist/universal-parallax.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marrio-h/universalParallax.git"
+  },
+  "keywords": [
+    "parallax",
+    "javascript",
+		"vanilla",
+		"vanilla javascript",
+		"mobile",
+		"phone",
+		"animation"
+  ],
+	"author": "Marius Hansen <marius.o.hansen@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marrio-h/universalParallax/issues"
+  },
+  "homepage": "https://github.com/marrio-h/universalParallax#readme"
+}
