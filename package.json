@@ -1,5 +1,5 @@
 {
-  "name": "Universal Parallax",
+  "name": "universal-parallax",
   "version": "1.0.0",
   "description": "Easy parallax plugin using pure javascript. Also works on mobile platforms. Cross browser support.",
   "main": "dist/universal-parallax.js",
