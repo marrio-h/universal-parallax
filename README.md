@@ -54,7 +54,14 @@ If `<section>` is your container, make the parallax element inside it.
  </section>
 ```
 
-You can also use a class to define your `background-image` in CSS, instead of using `data-parallax-image=""`.
+* You can also use a class to define your `background-image` in CSS, instead of using `data-parallax-image=""`.
+
+* If desired, transparency can be added to the parallax element and it won't affect the transparency of your content.
+```css
+.parallax {
+	opacity: 0.5;
+}
+```
 
 ###### #4
 Fire up the JS function.
