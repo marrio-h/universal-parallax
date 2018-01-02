@@ -9,7 +9,7 @@ Easy parallax plugin using pure javascript. Cross browser support, including mob
 - Mobile phone support
 
 ### Install
-`$ npm install universal-parallax -S`
+`$ npm i universal-parallax -S`
 
 ### Usage
 ###### #1
