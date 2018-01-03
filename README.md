@@ -2,16 +2,16 @@
 Easy parallax plugin using pure javascript. Cross browser support, including mobile platforms.
 [See demo here](https://marrio-h.github.io/universal-parallax/demo/)
 
-### Features
+## Features
 - Easy setup
 - Pure JavaScript plugin - no jQuery needed
 - Adaptive height
 - Mobile phone support
 
-### Install
+## Install
 `$ npm i universal-parallax -S`
 
-### Usage
+## Usage
 ###### #1
 Include the script in your project.
 ```html
@@ -69,10 +69,9 @@ Fire up the JS function.
 new universalParallax().init();
 ```
 
-### Custom speed
+## Custom speed
 You can change the parallax speed.
 ```js
-// Plugin customization
 new universalParallax().init({
     speed: 6.0
 });
