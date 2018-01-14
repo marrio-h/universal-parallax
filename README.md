@@ -70,12 +70,12 @@ new universalParallax().init({
 });
 ```
 
-## opacity
+Note: `speed: 1.2` is the minimum value before the background image is fixed.
+
+## Opacity
 If desired, transparency can be added to one, or all parallax elements and it won't affect the opacity of your content above.
 ```css
 .parallax {
 	opacity: 0.5;
 }
 ```
-
-Note: `speed: 1.2` is the minimum value before the background image is fixed.
