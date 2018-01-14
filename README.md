@@ -56,13 +56,6 @@ If `<section>` is your container, make the parallax element inside it.
 
 * You can also use a class to define your `background-image` in CSS, instead of using `data-parallax-image=""`.
 
-* If desired, transparency can be added to the parallax element and it won't affect the transparency of your content.
-```css
-.parallax {
-	opacity: 0.5;
-}
-```
-
 ###### #4
 Fire up the JS function.
 ```js
@@ -76,4 +69,13 @@ new universalParallax().init({
     speed: 6.0
 });
 ```
+
+## opacity
+If desired, transparency can be added to one, or all parallax elements and it won't affect the opacity of your content above.
+```css
+.parallax {
+	opacity: 0.5;
+}
+```
+
 Note: `speed: 1.2` is the minimum value before the background image is fixed.
