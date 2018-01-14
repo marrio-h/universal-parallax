@@ -1,10 +1,31 @@
 /**
-* @version 1.0.0
+* @version 1.0.6
 * @author Marius Hansen <marius.o.hansen@gmail.com>
 * @license MIT
 * @description Easy parallax plugin using pure javascript. Cross browser support, including mobile platforms. Based on goodparallax
 * @copyright © Marius Hansen 2018
 */
+
+// determine height
+function calculateHeight(parallax, speed) {
+	for (var i = 0; parallax.length > i; i++) {
+		var parentHeight = parallax[i].parentElement.scrollHeight;
+		var elemOffsetTop = (window.innerHeight - parentHeight) / 2;
+
+		var bgHeight = parentHeight + ((elemOffsetTop - (elemOffsetTop / speed)) * 2);
+		parallax[i].style.height = bgHeight + 'px';
+	}
+}
+
+// set speed
+function animateParallax(parallax, speed){
+	for (var i = 0; parallax.length > i; i++) {
+		var parentTopOfElem = parallax[i].parentElement.getBoundingClientRect().top;
+
+		var bgScroll = parentTopOfElem / speed;
+		parallax[i].style.top = bgScroll + 'px';
+	}
+}
 
 
 var universalParallax = function() {
@@ -15,26 +36,25 @@ var universalParallax = function() {
 			speed = 0;
 		}
 
+		if (/Mobi/.test(navigator.userAgent)) {
+			pageHeight = screen.height;
+		}else{
+			pageHeight = window.innerHeight;
+		}
+
+
+		// determine height
+		calculateHeight(parallax, speed);
+		// recalculate on resize
+		window.addEventListener("resize", function() {
+			calculateHeight(parallax, speed);
+		});
+
+
 		// Add scroll event listener
 		window.addEventListener("scroll", function() {
 			// apply effect to each element
-			for (var i = 0; parallax.length > i; i++) {
-
-				// get measurements
-				var parallaxContainer = parallax[i].parentElement;
-				var parentHeight = parallaxContainer.scrollHeight;
-				var parentTopOfElem = parallaxContainer.getBoundingClientRect().top;
-				var elemOffsetTop = (window.innerHeight - parentHeight) / 2;
-
-				// determine height
-				var bgHeight = parentHeight + ((elemOffsetTop - (elemOffsetTop / speed)) * 2);
-				parallax[i].style.height = bgHeight + 'px';
-
-				// set speed
-				var bgScroll = parentTopOfElem / speed;
-				parallax[i].style.top = bgScroll + 'px';
-
-			}
+			animateParallax(parallax, speed);
 		});
 	};
 
