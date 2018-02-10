@@ -46,11 +46,11 @@ Or add this CSS
 ```
 
 ###### #3
-If `<section>` is your container, make the parallax element inside it, at the bottom.
+If `<section>` is your container, make the parallax element inside it, just before the closing tag.
 
 ```html
 <section>
-    ...
+	...
 	<div class="parallax" data-parallax-image="path/to/your_image">
 </section>
 ```
