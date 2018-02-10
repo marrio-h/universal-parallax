@@ -1,5 +1,5 @@
 /**
-* @version 1.0.11
+* @version 1.0.12
 * @author Marius Hansen <marius.o.hansen@gmail.com>
 * @license MIT
 * @description Easy parallax plugin using pure javascript. Cross browser support, including mobile platforms. Based on goodparallax
@@ -78,9 +78,10 @@ var universalParallax = function() {
 			wrapper.appendChild(parallax[i]);
 			var parallaxContainer = parallax[i].parentElement;
 			parallaxContainer.className += 'parallax--container';
+
 			// parent elem need position: relative for effect to work - if not already defined, add it
 			if (window.getComputedStyle(parallaxContainer.parentElement, null).getPropertyValue('position') !== 'relative') {
-				this.style.position = 'relative';
+				parallaxContainer.parentElement.style.position = 'relative';
 			}
 
 			var imgData = parallax[i].dataset.parallaxImage;
