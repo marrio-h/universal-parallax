@@ -46,12 +46,13 @@ Or add this CSS
 ```
 
 ###### #3
-If `<section>` is your container, make the parallax element inside it.
+If `<section>` is your container, make the parallax element inside it, at the bottom.
 
 ```html
- <section>
-    <div class="parallax" data-parallax-image="path/to/your_image">
- </section>
+<section>
+    ...
+	<div class="parallax" data-parallax-image="path/to/your_image">
+</section>
 ```
 
 * You can also use a class to define your `background-image` in CSS, instead of using `data-parallax-image=""`.
@@ -66,7 +67,7 @@ new universalParallax().init();
 You can change the parallax speed.
 ```js
 new universalParallax().init({
-    speed: 6.0
+	speed: 6.0
 });
 ```
 
