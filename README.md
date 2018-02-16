@@ -1,12 +1,14 @@
 # Universal Parallax
 Easy parallax plugin using pure javascript. Cross browser support, including mobile platforms.
-[See demo here](https://marrio-h.github.io/universal-parallax/demo/)
+[See demo](https://marrio-h.github.io/universal-parallax/demo/)
+
 
 ## Features
 - Easy setup
 - Pure JavaScript plugin - no jQuery needed
 - Adaptive height
 - Mobile phone support
+- Support for transparent backgrounds, without affecting content
 
 ## Install
 `$ npm i universal-parallax -S`
@@ -18,9 +20,9 @@ Include the script in your project.
 <script src="node_modules/universal-parallax/dist/universal-parallax.min.js"></script>
 ```
 ###### #2
-Include this CSS file in your project `<link href="node_modules/universal-parallax/dist/universal-parallax.min.css" rel="stylesheet">`
-
-Or add this CSS
+Choose between either..
+- Including `<link href="node_modules/universal-parallax/dist/universal-parallax.min.css" rel="stylesheet">` in your `<head>` section
+- Or adding this CSS
 ```css
 .parallax--container {
 	position: absolute;

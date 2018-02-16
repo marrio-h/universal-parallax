@@ -1,16 +1,23 @@
 /**
-* @version 1.0.12
+* @version 1.0.13
 * @author Marius Hansen <marius.o.hansen@gmail.com>
 * @license MIT
 * @description Easy parallax plugin using pure javascript. Cross browser support, including mobile platforms. Based on goodparallax
 * @copyright © Marius Hansen 2018
 */
 
+// check if mobile
+if (/Mobi/.test(navigator.userAgent)) {
+	windowHeight = screen.height;
+}else{
+	windowHeight = window.innerHeight;
+}
+
 // determine height
 function calculateHeight(parallax, speed) {
 	for (var i = 0; parallax.length > i; i++) {
 		var parentHeight = parallax[i].parentElement.scrollHeight;
-		var elemOffsetTop = (window.innerHeight - parentHeight) / 2;
+		var elemOffsetTop = (windowHeight - parentHeight) / 2;
 
 		var bgHeight = parentHeight + ((elemOffsetTop - (elemOffsetTop / speed)) * 2);
 		parallax[i].style.height = bgHeight + 'px';
@@ -34,12 +41,6 @@ var universalParallax = function() {
 
 		if(speed < 1.2){
 			speed = 0;
-		}
-
-		if (/Mobi/.test(navigator.userAgent)) {
-			pageHeight = screen.height;
-		}else{
-			pageHeight = window.innerHeight;
 		}
 
 
