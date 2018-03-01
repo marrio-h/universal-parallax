@@ -30,7 +30,7 @@ Choose between either..
 ```
 
 - Or adding this CSS  
--- _Gives more flexibility controlling behaviour of bg images (see "optional" comment)_
+-- _Gives more flexibility controlling the behaviour of bg images (see "optional" comment)_
 
 ```css
 .parallax--container {
