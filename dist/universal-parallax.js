@@ -1,5 +1,7 @@
+'use strict';
+
 /**
-* @version 1.0.13
+* @version 1.0.14
 * @author Marius Hansen <marius.o.hansen@gmail.com>
 * @license MIT
 * @description Easy parallax plugin using pure javascript. Cross browser support, including mobile platforms. Based on goodparallax
@@ -7,10 +9,9 @@
 */
 
 // check if mobile
+var windowHeight = window.innerHeight;
 if (/Mobi/.test(navigator.userAgent)) {
 	windowHeight = screen.height;
-}else{
-	windowHeight = window.innerHeight;
 }
 
 // determine height
@@ -19,13 +20,13 @@ function calculateHeight(parallax, speed) {
 		var parentHeight = parallax[i].parentElement.scrollHeight;
 		var elemOffsetTop = (windowHeight - parentHeight) / 2;
 
-		var bgHeight = parentHeight + ((elemOffsetTop - (elemOffsetTop / speed)) * 2);
+		var bgHeight = parentHeight + (elemOffsetTop - elemOffsetTop / speed) * 2;
 		parallax[i].style.height = bgHeight + 'px';
 	}
 }
 
 // set speed
-function animateParallax(parallax, speed){
+function animateParallax(parallax, speed) {
 	for (var i = 0; parallax.length > i; i++) {
 		var parentTopOfElem = parallax[i].parentElement.getBoundingClientRect().top;
 
@@ -34,42 +35,38 @@ function animateParallax(parallax, speed){
 	}
 }
 
+var universalParallax = function universalParallax() {
 
-var universalParallax = function() {
+	var up = function up(parallax, speed) {
 
-	var up = function(parallax, speed) {
-
-		if(speed < 1.2){
+		if (speed < 1.2) {
 			speed = 0;
 		}
-
 
 		// determine height
 		calculateHeight(parallax, speed);
 		// recalculate on resize
-		window.addEventListener("resize", function() {
+		window.addEventListener("resize", function () {
 			calculateHeight(parallax, speed);
 		});
 
-
 		// Add scroll event listener
-		window.addEventListener("scroll", function() {
+		window.addEventListener("scroll", function () {
 			// apply effect to each element
 			animateParallax(parallax, speed);
 		});
 	};
 
-
 	// Ready all elements
-	this.init = function(param) {
-		if(typeof param === 'undefined') {
-			param = {}
+	this.init = function (param) {
+		if (typeof param === 'undefined') {
+			param = {};
 		}
 
 		param = {
 			speed: typeof param.speed !== 'undefined' ? param.speed : 4,
 			className: typeof param.className !== 'undefined' ? param.className : 'parallax'
-		}
+		};
 		var parallax = document.getElementsByClassName(param.className);
 
 		for (var i = 0; parallax.length > i; i++) {
@@ -78,7 +75,7 @@ var universalParallax = function() {
 			parallax[i].parentNode.insertBefore(wrapper, parallax[i]);
 			wrapper.appendChild(parallax[i]);
 			var parallaxContainer = parallax[i].parentElement;
-			parallaxContainer.className += 'parallax--container';
+			parallaxContainer.className += 'parallax__container';
 
 			// parent elem need position: relative for effect to work - if not already defined, add it
 			if (window.getComputedStyle(parallaxContainer.parentElement, null).getPropertyValue('position') !== 'relative') {
@@ -87,14 +84,14 @@ var universalParallax = function() {
 
 			var imgData = parallax[i].dataset.parallaxImage;
 			// add image to div if none is specified
-			if(typeof imgData !== 'undefined') {
-				parallax[i].style.backgroundImage = 'url('+imgData+')';
+			if (typeof imgData !== 'undefined') {
+				parallax[i].style.backgroundImage = 'url(' + imgData + ')';
 				// if no other class than .parallax is specified, add CSS
-				if(parallax[i].classList.length === 1 && parallax[i].classList[0] === 'parallax') {
-					Object.assign(parallax[i].style,{
-						'background-repeat':'no-repeat',
-						'background-position':'center',
-						'background-size':'cover'
+				if (parallax[i].classList.length === 1 && parallax[i].classList[0] === 'parallax') {
+					Object.assign(parallax[i].style, {
+						'background-repeat': 'no-repeat',
+						'background-position': 'center',
+						'background-size': 'cover'
 					});
 				}
 			}

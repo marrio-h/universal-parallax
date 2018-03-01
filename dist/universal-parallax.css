@@ -1,4 +1,4 @@
-.parallax--container {
+.parallax__container {
 	clip: rect(0, auto, auto, 0);
 	height: 100%;
 	left: 0;
@@ -7,14 +7,11 @@
 	width: 100%;
 	z-index: -10;
 }
-
-.parallax {
+.parallax__container .parallax {
 	/* optional */
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-
-	/* required */
 	height: 100%;
 	left: 0;
 	position: fixed;
