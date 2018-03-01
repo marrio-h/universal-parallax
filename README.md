@@ -1,5 +1,3 @@
-
-
 # Universal Parallax
 Easy parallax plugin using pure javascript. Cross browser support, including mobile platforms.
 [See demo](https://marrio-h.github.io/universal-parallax/demo/)
@@ -31,8 +29,8 @@ Choose between either..
 <link href="node_modules/universal-parallax/dist/universal-parallax.min.css" rel="stylesheet">
 ```
 
-- Or adding this CSS
---- _Gives more flexibility controlling behaviour of bg images (see "optional" comment)_
+- Or adding this CSS  
+-- _Gives more flexibility controlling behaviour of bg images (see "optional" comment)_
 
 ```css
 .parallax--container {
