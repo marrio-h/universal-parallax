@@ -1,6 +1,7 @@
 # Universal Parallax
 Easy parallax plugin using pure javascript. Cross browser support, including mobile platforms.
-[See demo](https://marrio-h.github.io/universal-parallax/demo/)
+
+#### [See demo](https://marrio-h.github.io/universal-parallax/demo/)
 
 
 ## Features
@@ -49,7 +50,7 @@ Choose between either..
 	height: 100%;
 	top: 0;
 	left: 0;
-	/* optional */
+	/* optional - see step #3 */
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -57,7 +58,7 @@ Choose between either..
 ```
 
 ###### #3
-If `<section>` is your container, make the parallax element inside it, just before the closing tag
+If `<section>` is your container, make the parallax element inside it, just before the **_closing tag_**
 
 ```html
 <section>
@@ -81,7 +82,7 @@ Check the result in your project
 - Pls [report any problems](https://github.com/marrio-h/universal-parallax/issues) you find! Thanks :)
 
 ## Custom speed
-You can change the parallax speed; the higher the number, the slower the parallax effect.
+You can change the parallax speed; the higher the number, the slower the parallax effect
 
 ```js
 new universalParallax().init({
@@ -89,7 +90,7 @@ new universalParallax().init({
 });
 ```
 
-**Note:** `speed: 1.2` is the minimum value before the background image is fixed.
+**Note:** `speed: 1.2` is the minimum value before the background image is fixed
 
 
 ## Opacity
