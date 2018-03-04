@@ -1,4 +1,5 @@
 
+
 # Universal Parallax
 Easy parallax plugin using pure javascript. Cross browser support, including mobile platforms.
 
@@ -15,7 +16,7 @@ Easy parallax plugin using pure javascript. Cross browser support, including mob
 ## :floppy_disk: Install
 `$ npm i universal-parallax -S`
 
-## :rocket: Usage
+## :wrench: Usage
 ###### #1
 Include the script at the bottom of your project
 
@@ -35,7 +36,7 @@ Choose between either..
 :zap: _Gives more flexibility controlling the behaviour of bg images (see "optional" comment)_
 
 ```css
-.parallax--container {
+.parallax__container {
 	position: absolute;
 	clip: rect(0, auto, auto, 0);
 	width: 100%;
@@ -51,7 +52,7 @@ Choose between either..
 	height: 100%;
 	top: 0;
 	left: 0;
-	/* optional - see step #3 */
+	/* optional - can be put in separate class */
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -59,7 +60,7 @@ Choose between either..
 ```
 
 ###### #3
-If `<section>` is your container, make the parallax element inside it, just before the **_closing tag_** :fire:
+If `<section>` is your container, make the parallax element inside it, just before the **_closing tag_** :point_left:
 
 ```html
 <section>
@@ -71,13 +72,13 @@ If `<section>` is your container, make the parallax element inside it, just befo
 :zap: You can also use a class to define your `background-image` in CSS, instead of using `data-parallax-image=""`
 
 ###### #4
-Fire up the JS function
+Initialize the JS function
 
 ```js
 new universalParallax().init();
 ```
 
-###### #5
+---
 That's it! :checkered_flag:
 - If it resembles [the demo](https://marrio-h.github.io/universal-parallax/demo/) - you're done :tada:
 - See customizations underneath
