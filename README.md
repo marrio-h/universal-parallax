@@ -16,7 +16,7 @@ Easy parallax plugin using pure javascript. Cross browser support, including mob
 ## :floppy_disk: Install
 `$ npm i universal-parallax -S`
 
-## :wrench: Usage
+## :rocket: Setup
 ###### #1
 Include the script at the bottom of your project
 
