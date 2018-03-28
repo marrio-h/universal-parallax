@@ -17,14 +17,14 @@ Easy parallax plugin using pure javascript. Cross browser support, including mob
 `$ npm i universal-parallax -S`
 
 ## :rocket: Setup
-###### #1
+#### #1
 Include the script at the bottom of your project
 
 ```html
 <script src="node_modules/universal-parallax/dist/universal-parallax.min.js"></script>
 ```
 
-###### #2
+#### #2
 Choose between either..
 - Including this in your `<head>` section
 
@@ -57,9 +57,17 @@ Choose between either..
 	background-position: center;
 	background-size: cover;
 }
+
+/* webkit clip fix */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .parallax__container {
+    clip: auto;
+    -webkit-mask-image: -webkit-linear-gradient(top, #fff 0%, #fff 100%);
+  }
+}
 ```
 
-###### #3
+#### #3
 If `<section>` is your container, make the parallax element inside it, just before the **_closing tag_** :point_left:
 
 ```html
@@ -71,7 +79,7 @@ If `<section>` is your container, make the parallax element inside it, just befo
 
 :zap: You can also use a class to define your `background-image` in CSS, instead of using `data-parallax-image=""`
 
-###### #4
+#### #4
 Initialize the JS function
 
 ```js

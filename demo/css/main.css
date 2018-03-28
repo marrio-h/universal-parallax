@@ -126,3 +126,11 @@ section .content {
 #bg3 {
 	background-image: url("../img/bg3.jpg");
 }
+
+/* webkit clip fix */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+	.parallax__container {
+		clip: auto;
+		-webkit-mask-image: -webkit-linear-gradient(top, #fff 0%, #fff 100%);
+	}
+}
