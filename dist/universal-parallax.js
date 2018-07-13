@@ -12,9 +12,9 @@ var windowHeight = window.innerHeight;
 if (/Mobi/.test(navigator.userAgent)) {
 	windowHeight = screen.height;
 
-	mobileCss = document.createElement('style');
+	var mobileCss = document.createElement('style');
 	mobileCss.type = 'text/css';
-	style.innerHTML = '\n\t@media screen and (-webkit-min-device-pixel-ratio:0) {\n\t\t.parallax__container {\n\t\t\tclip: auto;\n\t\t\t-webkit-mask-image: -webkit-linear-gradient(top, #fff 0%, #fff 100%)\n\t\t}\n\t};\n\t';
+	mobileCss.innerHTML = '\n\t@media screen and (-webkit-min-device-pixel-ratio:0) {\n\t\t.parallax__container {\n\t\t\tclip: auto;\n\t\t\t-webkit-mask-image: -webkit-linear-gradient(top, #fff 0%, #fff 100%)\n\t\t}\n\t};\n\t';
 
 	document.getElementsByTagName('head')[0].appendChild(mobileCss);
 }
