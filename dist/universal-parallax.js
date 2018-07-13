@@ -14,7 +14,7 @@ if (/Mobi/.test(navigator.userAgent)) {
 
 	var mobileCss = document.createElement('style');
 	mobileCss.type = 'text/css';
-	mobileCss.innerHTML = '\n\t@media screen and (-webkit-min-device-pixel-ratio:0) {\n\t\t.parallax__container {\n\t\t\tclip: auto;\n\t\t\t-webkit-mask-image: -webkit-linear-gradient(top, #fff 0%, #fff 100%)\n\t\t}\n\t};\n\t';
+	mobileCss.innerHTML = '\n\t@media screen and (-webkit-min-device-pixel-ratio:0) {\n\t\t.parallax__container {\n\t\t\tclip: auto;\n\t\t\t-webkit-mask-image: -webkit-linear-gradient(top, #fff 0%, #fff 100%);\n\t\t\t-webkit-backface-visibility: hidden;\n\t\t\t-webkit-webkit-perspective: 1000;\n\t\t}\n\t};\n\t';
 
 	document.getElementsByTagName('head')[0].appendChild(mobileCss);
 }
@@ -35,7 +35,8 @@ function animateParallax(parallax, speed) {
 
 		if (container.top + container.height >= 0 && container.top <= windowHeight) {
 			var bgScroll = (container.top - 2) / speed;
-			parallax[i].style.transform = 'translate3d(0, ' + bgScroll + 'px, 0)';
+
+			parallax[i].style.top = bgScroll + 'px';
 		}
 	}
 }
