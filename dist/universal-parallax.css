@@ -5,10 +5,19 @@
 	position: absolute;
 	top: 0;
 	width: 100%;
-	z-index: -10;
+	z-index: -100;
 }
 .parallax__container .parallax {
-	/* optional */
+	/**
+    * default bg img behaviour
+    * ----------------------------
+    * background-position: center;
+    * background-repeat: no-repeat;
+    * background-size: cover;
+    * ----------------------------
+    * to better control the behaviour of your bg img's
+    * put these properties in a seperate class if needed
+    */
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -17,12 +26,4 @@
 	position: fixed;
 	top: 0;
 	width: 100%;
-}
-
-/* webkit clip fix */
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-	.parallax__container {
-		clip: auto;
-		-webkit-mask-image: -webkit-linear-gradient(top, #fff 0%, #fff 100%);
-	}
 }

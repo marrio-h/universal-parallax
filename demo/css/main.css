@@ -27,12 +27,10 @@ body {
 p {
 	font-size: 1em;
 }
-
-.p--copy {
+p--copy {
 	padding: 3px 0 22px 0;
 }
-
-.p--credits {
+p--credits {
 	font-size: .8em;
 	font-weight: 700;
 }
@@ -47,12 +45,11 @@ a {
 	font-weight: 700;
 	text-decoration: none;
 }
-
-.a--no-weight {
+a--no-weight {
 	font-weight: 300;
 }
 
-section {
+.container {
 	-webkit-align-items: center;
 	align-items: center;
 	display: -webkit-flex;
@@ -63,11 +60,24 @@ section {
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	margin: 0;
-	padding: 0;
+	overflow: hidden;
+	padding: 15px;
 	position: relative;
 	width: 100%;
 }
-section .content {
+.container--big {
+	height: 175vh;
+}
+.container--full {
+	height: 100vh;
+}
+.container--small {
+	height: 40vh;
+}
+.container--random {
+	height: "8px";
+}
+.container .content {
 	background: rgba(0, 0, 0, .4);
 	border-radius: 3px;
 	color: #fff;
@@ -83,7 +93,7 @@ section .content {
 	position: absolute;
 	top: 0;
 	width: 100%;
-	z-index: -10;
+	z-index: -100;
 }
 .parallax__container .parallax {
 	height: 100%;
@@ -92,45 +102,16 @@ section .content {
 	top: 0;
 	width: 100%;
 }
-.parallax__container .parallax__bg {
+.parallax__container .parallax--bg {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
-.container {
-	padding: 15px;
-}
-
-.container__huge {
-	height: 175vh;
-}
-
-.container__big {
-	height: 100vh;
-}
-
-.container__small {
-	height: 40vh;
-}
-
-.container__random {
-	height: 452px;
-}
-
-/* ways of implementing parallax bg by class/id */
 .bg1 {
 	background-image: url("../img/bg1.jpg");
 }
 
 #bg3 {
 	background-image: url("../img/bg3.jpg");
-}
-
-/* webkit clip fix */
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-	.parallax__container {
-		clip: auto;
-		-webkit-mask-image: -webkit-linear-gradient(top, #fff 0%, #fff 100%);
-	}
 }

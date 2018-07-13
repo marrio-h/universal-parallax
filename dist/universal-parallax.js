@@ -1,92 +1,98 @@
 'use strict';
 
 /**
-* @version 1.1.4
+* @version 1.2.0
 * @author Marius Hansen <marius.o.hansen@gmail.com>
 * @license MIT
 * @description Easy parallax plugin using pure javascript. Cross browser support, including mobile platforms. Based on goodparallax
 * @copyright © Marius Hansen 2018
 */
 
-// check if mobile
 var windowHeight = window.innerHeight;
 if (/Mobi/.test(navigator.userAgent)) {
 	windowHeight = screen.height;
 }
 
-// determine height
 function calculateHeight(parallax, speed) {
 	for (var i = 0; parallax.length > i; i++) {
-		var parentHeight = parallax[i].parentElement.scrollHeight;
-		var elemOffsetTop = (windowHeight - parentHeight) / 2;
+		var container = parallax[i].parentElement.parentElement.getBoundingClientRect().height;
 
-		var bgHeight = parentHeight + (elemOffsetTop - elemOffsetTop / speed) * 2;
+		var elemOffsetTop = (windowHeight - container) / 2;
+		var bgHeight = Math.ceil(container + (elemOffsetTop - elemOffsetTop / speed) * 2) + 4;
 		parallax[i].style.height = bgHeight + 'px';
 	}
 }
 
-// set speed
 function animateParallax(parallax, speed) {
 	for (var i = 0; parallax.length > i; i++) {
-		var parentTopOfElem = parallax[i].parentElement.getBoundingClientRect().top;
+		var container = parallax[i].parentElement.parentElement.getBoundingClientRect();
 
-		var bgScroll = parentTopOfElem / speed;
-		parallax[i].style.top = bgScroll + 'px';
+		if (container.top + container.height >= 0 && container.top <= windowHeight) {
+			var bgScroll = (container.top - 2) / speed;
+			parallax[i].style.transform = 'translate3d(0, ' + bgScroll + 'px, 0)';
+		}
 	}
 }
 
 var universalParallax = function universalParallax() {
-
 	var up = function up(parallax, speed) {
-
-		if (speed < 1.2) {
-			speed = 0;
+		if (speed < 1) {
+			speed = 1;
 		}
 
-		// determine height
 		calculateHeight(parallax, speed);
-		// recalculate on resize
+
 		window.addEventListener("resize", function () {
 			calculateHeight(parallax, speed);
 		});
 
-		// Add scroll event listener
-		window.addEventListener("scroll", function () {
-			// apply effect to each element
+		var latestKnownScrollY = 0,
+		    scrolled = false;
+
+		function onScroll() {
+			latestKnownScrollY = window.scrollY;
+			if (!scrolled) {
+				requestAnimationFrame(runScrollAnimations);
+			}
+			scrolled = true;
+		}
+
+		function runScrollAnimations() {
+			scrolled = false;
+			var currentScrollY = latestKnownScrollY;
 			animateParallax(parallax, speed);
-		});
+		}
+
+		window.addEventListener('scroll', onScroll, false);
 	};
 
-	// Ready all elements
 	this.init = function (param) {
 		if (typeof param === 'undefined') {
 			param = {};
 		}
 
 		param = {
-			speed: typeof param.speed !== 'undefined' ? param.speed : 4,
+			speed: typeof param.speed !== 'undefined' ? param.speed : 1.5,
 			className: typeof param.className !== 'undefined' ? param.className : 'parallax'
 		};
 		var parallax = document.getElementsByClassName(param.className);
 
 		for (var i = 0; parallax.length > i; i++) {
-			// make container div
 			var wrapper = document.createElement('div');
 			parallax[i].parentNode.insertBefore(wrapper, parallax[i]);
 			wrapper.appendChild(parallax[i]);
 			var parallaxContainer = parallax[i].parentElement;
 			parallaxContainer.className += 'parallax__container';
 
-			// parent elem need position: relative for effect to work - if not already defined, add it
 			if (window.getComputedStyle(parallaxContainer.parentElement, null).getPropertyValue('position') !== 'relative') {
 				parallaxContainer.parentElement.style.position = 'relative';
 			}
 
 			var imgData = parallax[i].dataset.parallaxImage;
-			// add image to div if none is specified
+
 			if (typeof imgData !== 'undefined') {
 				parallax[i].style.backgroundImage = 'url(' + imgData + ')';
-				// if no other class than .parallax is specified, add CSS
+
 				if (parallax[i].classList.length === 1 && parallax[i].classList[0] === 'parallax') {
 					Object.assign(parallax[i].style, {
 						'background-repeat': 'no-repeat',
@@ -97,7 +103,6 @@ var universalParallax = function universalParallax() {
 			}
 		};
 
-		// when init completed, run function
 		up(parallax, param.speed);
 	};
 };

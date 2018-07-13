@@ -43,7 +43,7 @@ Choose between either..
 	height: 100%;
 	top: 0;
 	left: 0;
-	z-index: -10; /* place further back if necessary */
+	z-index: -100;
 }
 
 .parallax {
@@ -52,18 +52,11 @@ Choose between either..
 	height: 100%;
 	top: 0;
 	left: 0;
+
 	/* optional - can be put in separate class */
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-}
-
-/* webkit clip fix */
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  .parallax__container {
-    clip: auto;
-    -webkit-mask-image: -webkit-linear-gradient(top, #fff 0%, #fff 100%);
-  }
 }
 ```
 
@@ -101,7 +94,7 @@ new universalParallax().init({
 });
 ```
 
-:zap: `speed: 1.2` is the minimum value before the background image is fixed
+:zap: `speed: 1` is the minimum value before the background image is fixed
 
 
 ## Opacity

@@ -10,25 +10,25 @@
 
 <body>
 
-	<section class="container container__big">
+	<section class="container container--full">
 		<div class="content">
 			<h1>Universal Parallax</h1>
 			<p>A pure javascript plugin</p>
 		</div>
-		<div class="parallax parallax__bg bg1"></div>
+		<div class="parallax parallax--bg bg1"></div>
 	</section>
 
-	<section class="container container__small">
+	<section class="container container--small">
 		<div class="content"><p>Adapts to height</p></div>
-		<div class="parallax parallax__bg" data-parallax-image="img/bg2.jpg"></div>
+		<div class="parallax parallax--bg" data-parallax-image="img/bg2.jpg"></div>
 	</section>
 
-	<section class="container container__huge">
+	<section class="container container--big">
 		<div class="content"><p>Container can also be bigger than the screen</p></div>
-		<div class="parallax parallax__bg" id="bg3"></div>
+		<div class="parallax parallax--bg" id="bg3"></div>
 	</section>
 
-	<section class="container container__big">
+	<section class="container container--full">
 		<div class="content">
 			<h2>Universal Parallax</h2>
 			<p>scales to whatever height your container might be.</p>
@@ -43,8 +43,11 @@
 	</section>
 
 	<script src="../dist/universal-parallax.min.js"></script>
+	<!-- <script src="../../js/universal-parallax.js"></script> -->
 	<script>
-		new universalParallax().init();
+		new universalParallax().init({
+			speed: 4
+		});
 	</script>
 
 </body>
