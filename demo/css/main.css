@@ -56,6 +56,7 @@ a--no-weight {
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-align: center;
+	-ms-flex-align: center;
 	-webkit-flex-wrap: wrap;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;

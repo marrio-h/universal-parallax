@@ -29,7 +29,8 @@ function animateParallax(parallax, speed) {
 
 		if (container.top + container.height >= 0 && container.top <= windowHeight) {
 			var bgScroll = (container.top - 2) / speed;
-			parallax[i].style.transform = 'translate3d(0, ' + bgScroll + 'px, 0)';
+
+			parallax[i].style.top = bgScroll + 'px';
 		}
 	}
 }
