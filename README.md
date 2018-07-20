@@ -1,5 +1,5 @@
 # Universal Parallax
-Easy parallax plugin using pure javascript. Cross browser support, including mobile platforms.
+Easy parallax plugin using pure javascript. Cross browser compatibility, including mobile platforms (iOS, Android). Support for opaque backgrounds.
 
 #### [See demo](https://marrio-h.github.io/universal-parallax/demo/)
 
