@@ -1,5 +1,3 @@
-
-
 # Universal Parallax
 Easy parallax plugin using pure javascript. Cross browser support, including mobile platforms.
 
@@ -8,10 +6,10 @@ Easy parallax plugin using pure javascript. Cross browser support, including mob
 
 ## :zap: Features
 - Easy setup
-- Pure JavaScript plugin - no jQuery needed
+- Pure JavaScript
 - Adaptive height
-- Mobile phone support
-- Support for transparent backgrounds - without affecting content
+- Support for mobile devices
+- Support for opacity on BG
 
 ## :floppy_disk: Install
 `$ npm i universal-parallax -S`
@@ -25,15 +23,15 @@ Include the script at the bottom of your project
 ```
 
 #### #2
-Choose between either..
-- Including this in your `<head>` section
+_Choose between:_
+
+- Include this in your `<head>` section
 
 ```html
 <link href="node_modules/universal-parallax/dist/universal-parallax.min.css" rel="stylesheet">
 ```
 
-- Or adding this CSS  
-:zap: _Gives more flexibility controlling the behaviour of bg images (see "optional" comment)_
+- Or add this CSS
 
 ```css
 .parallax__container {
@@ -53,12 +51,13 @@ Choose between either..
 	top: 0;
 	left: 0;
 
-	/* optional - can be put in separate class */
+	/* optional - for better control, put in separate class */
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
 ```
+:zap: _Gives more flexibility controlling the behaviour of bg images (see "optional" comment)_
 
 #### #3
 If `<section>` is your container, make the parallax element inside it, just before the **_closing tag_** :point_left:
@@ -70,7 +69,7 @@ If `<section>` is your container, make the parallax element inside it, just befo
 </section>
 ```
 
-:zap: You can also use a class to define your `background-image` in CSS, instead of using `data-parallax-image=""`
+:zap: You can also use `background-image` to define your image instead of using `data-parallax-image=""`
 
 #### #4
 Initialize the JS function
@@ -83,7 +82,8 @@ new universalParallax().init();
 That's it! :checkered_flag:
 - If it resembles [the demo](https://marrio-h.github.io/universal-parallax/demo/) - you're done :tada:
 - See customizations underneath
-- Please [report any problems](https://github.com/marrio-h/universal-parallax/issues) you find, or requests for new features and improvements. Thanks! :heart:
+- Please [report any problems](https://github.com/marrio-h/universal-parallax/issues) you find
+- Otherwise, let me know me for [new features or improvements](https://github.com/marrio-h/universal-parallax/projects/1#column-3080421). Thanks!
 
 ## Custom speed
 You can change the parallax speed; the higher the number, the slower the parallax effect
@@ -98,10 +98,10 @@ new universalParallax().init({
 
 
 ## Opacity
-If desired, transparency can be added to the parallax elements with CSS and it won't affect the opacity of your content above. _CSS class not included*_ :smirk:
+Transparency can be added and it won't affect the opacity of your content.
 
 ```css
-.parallax--opacity {
+.parallax {
 	opacity: 0.5;
 }
 ```

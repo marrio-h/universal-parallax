@@ -1,35 +1,35 @@
 {
-  "name": "universal-parallax",
-  "version": "1.1.4",
-  "description": "Easy parallax plugin using pure javascript. Also works on mobile platforms. Cross browser and opacity support.",
-  "main": "dist/universal-parallax.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/marrio-h/universal-parallax.git"
-  },
-  "keywords": [
-    "parallax",
-		"universal parallax",
-		"universal",
-		"background",
-		"parallax background",
-		"vanilla parallax",
-		"javascript parallax",
-    "javascript",
-		"vanilla",
-		"vanilla javascript",
-		"mobile",
-		"phone",
-		"mobile phone",
-		"mobile support",
-		"opacity",
-		"transparency",
-		"transparent"
-  ],
-	"author": "Marius Hansen <marius.o.hansen@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/marrio-h/universal-parallax/issues"
-  },
-  "homepage": "https://github.com/marrio-h/universal-parallax#readme"
+    "name": "universal-parallax",
+    "version": "1.1.5",
+    "description": "Easy parallax plugin. Pure javascript. Works on mobile platforms (iOS, Android). Cross browser compatibility. Opacity support.",
+    "main": "dist/universal-parallax.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/marrio-h/universal-parallax.git"
+    },
+    "keywords": [
+        "parallax",
+        "universal parallax",
+        "universal",
+        "background",
+        "parallax background",
+        "vanilla parallax",
+        "javascript parallax",
+        "javascript",
+        "vanilla",
+        "vanilla javascript",
+        "mobile",
+        "phone",
+        "mobile phone",
+        "mobile support",
+        "opacity",
+        "transparency",
+        "transparent"
+    ],
+    "author": "Marius Hansen <marius.o.hansen@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/marrio-h/universal-parallax/issues"
+    },
+    "homepage": "https://github.com/marrio-h/universal-parallax#readme"
 }

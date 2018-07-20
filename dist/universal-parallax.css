@@ -8,19 +8,11 @@
 	z-index: -100;
 }
 .parallax__container .parallax {
-	/**
-    * default bg img behaviour
-    * ----------------------------
-    * background-position: center;
-    * background-repeat: no-repeat;
-    * background-size: cover;
-    * ----------------------------
-    * to better control the behaviour of your bg img's
-    * put these properties in a seperate class if needed
-    */
+	/* can be put in a seperate class for better control */
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	/* --------------------------- */
 	height: 100%;
 	left: 0;
 	position: fixed;

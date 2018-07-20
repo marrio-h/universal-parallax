@@ -56,15 +56,6 @@ a--no-weight {
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-align: center;
-	-ms-flex-align: center;
-	-ms-flex-align: center;
-	-ms-flex-align: center;
-	-ms-flex-align: center;
-	-ms-flex-align: center;
-	-ms-flex-align: center;
-	-ms-flex-align: center;
-	-ms-flex-align: center;
-	-ms-flex-align: center;
 	-webkit-flex-wrap: wrap;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
@@ -84,7 +75,7 @@ a--no-weight {
 	height: 40vh;
 }
 .container--random {
-	height: "8px";
+	height: "226px";
 }
 .container .content {
 	background: rgba(0, 0, 0, .4);
@@ -105,16 +96,16 @@ a--no-weight {
 	z-index: -100;
 }
 .parallax__container .parallax {
+	/* can be put in a seperate class for better control */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* --------------------------- */
 	height: 100%;
 	left: 0;
 	position: fixed;
 	top: 0;
 	width: 100%;
-}
-.parallax__container .parallax--bg {
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
 }
 
 .bg1 {
