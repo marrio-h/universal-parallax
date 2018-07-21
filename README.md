@@ -50,21 +50,21 @@ _Choose between:_
 	height: 100%;
 	top: 0;
 	left: 0;
+	transform: translate3d(0,0,0);
 
-	/* optional - for better control, put in separate class */
+	/* BG behaviour */
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
 ```
-:zap: _Gives more flexibility controlling the behaviour of bg images (see "optional" comment)_
+:zap: _BG behaviour in seperate class gives more flexibility controlling them_
 
 #### #3
-If `<section>` is your container, make the parallax element inside it, just before the **_closing tag_** :point_left:
+If `<section>` is your container, make the parallax element inside it
 
 ```html
 <section>
-	...
 	<div class="parallax" data-parallax-image="path/to/your_image">
 </section>
 ```

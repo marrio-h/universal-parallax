@@ -75,7 +75,7 @@ a--no-weight {
 	height: 40vh;
 }
 .container--random {
-	height: "393px";
+	height: "268px";
 }
 .container .content {
 	background: rgba(0, 0, 0, .4);
@@ -105,6 +105,8 @@ a--no-weight {
 	left: 0;
 	position: fixed;
 	top: 0;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
 	width: 100%;
 }
 
