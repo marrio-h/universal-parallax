@@ -8,8 +8,8 @@ Easy parallax plugin using pure javascript. Cross browser compatibility, includi
 - Easy setup
 - Pure JavaScript
 - Adaptive height
-- Support for mobile devices
-- Support for opacity on BG
+- Works on mobile devices
+- Can have opacity without affecting content
 
 ## :floppy_disk: Install
 `$ npm i universal-parallax -S`
