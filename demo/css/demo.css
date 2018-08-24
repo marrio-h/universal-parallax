@@ -109,8 +109,16 @@ a.a--no-weight {
 	background-image: url("../img/bg3.jpg");
 }
 
+.show-on-mobile--inline {
+	display: none;
+}
+
 @media screen and (max-width: 480px) {
-	.hide-spacer {
+	.hide-on-mobile {
 		display: none;
+	}
+
+	.show-on-mobile--inline {
+		display: inline;
 	}
 }
