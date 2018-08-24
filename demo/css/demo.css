@@ -27,12 +27,8 @@ body {
 p {
 	font-size: 1em;
 }
-p--copy {
-	padding: 3px 0 22px 0;
-}
-p--credits {
-	font-size: .8em;
-	font-weight: 700;
+p.p--credits {
+	font-size: .9em;
 }
 
 h1, h2 {
@@ -45,7 +41,7 @@ a {
 	font-weight: 700;
 	text-decoration: none;
 }
-a--no-weight {
+a.a--no-weight {
 	font-weight: 300;
 }
 
@@ -111,4 +107,10 @@ a--no-weight {
 
 #bg3 {
 	background-image: url("../img/bg3.jpg");
+}
+
+@media screen and (max-width: 480px) {
+	.hide-spacer {
+		display: none;
+	}
 }
