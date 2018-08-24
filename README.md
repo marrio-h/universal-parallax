@@ -50,7 +50,6 @@ _Choose between:_
 	height: 100%;
 	top: 0;
 	left: 0;
-	transform: translate3d(0,0,0);
 
 	/* BG behaviour */
 	background-repeat: no-repeat;
