@@ -1,6 +1,6 @@
 {
     "name": "universal-parallax",
-    "version": "1.1.7",
+    "version": "1.2.0",
     "description": "Easy parallax plugin using pure javascript. Cross browser compatibility, including mobile platforms (iOS, Android). Support for opaque backgrounds.",
     "main": "dist/universal-parallax.js",
     "repository": {
