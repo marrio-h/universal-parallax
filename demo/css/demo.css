@@ -73,9 +73,6 @@ a--no-weight {
 .container--small {
 	height: 40vh;
 }
-.container--random {
-	height: "68px";
-}
 .container .content {
 	background: rgba(0, 0, 0, .6);
 	border-radius: 3px;
@@ -89,6 +86,7 @@ a--no-weight {
 	clip: rect(0, auto, auto, 0);
 	height: 100%;
 	left: 0;
+	overflow: hidden;
 	position: absolute;
 	top: 0;
 	width: 100%;

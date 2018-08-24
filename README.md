@@ -35,25 +35,26 @@ _Choose between:_
 
 ```css
 .parallax__container {
-	position: absolute;
 	clip: rect(0, auto, auto, 0);
-	width: 100%;
 	height: 100%;
-	top: 0;
 	left: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	width: 100%;
 	z-index: -100;
 }
 
 .parallax {
 	position: fixed;
-	width: 100%;
-	height: 100%;
 	top: 0;
-	left: 0;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	width: 100%;
 
 	/* BG behaviour */
-	background-repeat: no-repeat;
 	background-position: center;
+	background-repeat: no-repeat;
 	background-size: cover;
 }
 ```
