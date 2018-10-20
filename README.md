@@ -1,5 +1,7 @@
+[![npm version](https://badge.fury.io/js/universal-parallax.svg)](https://badge.fury.io/js/universal-parallax) [![](https://data.jsdelivr.com/v1/package/npm/universal-parallax/badge?style=rounded)](https://www.jsdelivr.com/package/npm/universal-parallax)
+
 # Universal Parallax
-Easy parallax plugin using pure javascript. Cross browser compatibility, including mobile platforms (iOS, Android). Support for opaque backgrounds.
+Easy parallax plugin using pure javascript. Lightweight (2kb) and cross browser compatibility - including mobile platforms (iOS, Android).
 
 #### [See demo](https://marrio-h.github.io/universal-parallax/demo/)
 
@@ -9,20 +11,14 @@ Easy parallax plugin using pure javascript. Cross browser compatibility, includi
 - Pure JavaScript
 - Adaptive height
 - Works on mobile devices
-- Can have opacity without affecting content
+- Lightweight (2kb minified)
 
 ## :floppy_disk: Install
 `$ npm i universal-parallax -S`
 
 ## :rocket: Setup
+
 #### #1
-Include the script at the bottom of your project
-
-```html
-<script src="node_modules/universal-parallax/dist/universal-parallax.min.js"></script>
-```
-
-#### #2
 _Choose between:_
 
 - Include this in your `<head>` section
@@ -50,6 +46,8 @@ _Choose between:_
 	top: 0;
 	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
 	width: 100%;
 
 	/* BG behaviour */
@@ -60,7 +58,7 @@ _Choose between:_
 ```
 :zap: _BG behaviour in seperate class gives more flexibility controlling them_
 
-#### #3
+#### #2
 If `<section>` is your container, make the parallax element inside it
 
 ```html
@@ -71,11 +69,20 @@ If `<section>` is your container, make the parallax element inside it
 
 :zap: You can also use `background-image` to define your image instead of using `data-parallax-image=""`
 
+#### #3
+Include the script to your project
+
+```html
+<script src="node_modules/universal-parallax/dist/universal-parallax.min.js"></script>
+```
+
 #### #4
 Initialize the JS function
 
-```js
-new universalParallax().init();
+```html
+<script>
+	new universalParallax().init();
+</script>
 ```
 
 ---
@@ -97,8 +104,10 @@ new universalParallax().init({
 :zap: `speed: 1` is the minimum value before the background image is fixed
 
 
-## Opacity
-Transparency can be added and it won't affect the opacity of your content.
+## Tips
+
+#### Opacity
+If you want your backround color to shine through or dampen the image without making it a .png - just add transparency to it
 
 ```css
 .parallax {

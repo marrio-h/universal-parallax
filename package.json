@@ -1,7 +1,7 @@
 {
     "name": "universal-parallax",
-    "version": "1.2.1",
-    "description": "Easy parallax plugin using pure javascript. Cross browser compatibility, including mobile platforms (iOS, Android). Support for opaque backgrounds.",
+    "version": "1.2.2",
+    "description": "Easy parallax plugin using pure javascript. Lightweight (2kb) and cross browser compatibility - including mobile platforms (iOS, Android).",
     "main": "dist/universal-parallax.js",
     "repository": {
         "type": "git",
@@ -21,9 +21,7 @@
         "javascript parallax",
         "javascript",
         "mobile",
-        "phone",
-        "mobile parallax support",
-        "phone parallax support"
+        "phone"
     ],
     "author": "Marius Hansen <marius.o.hansen@gmail.com>",
     "license": "MIT",
