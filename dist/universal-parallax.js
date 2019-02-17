@@ -1,11 +1,11 @@
 'use strict';
 
 /**
-* @version 1.2.1
+* @version 1.3.0
 * @author Marius Hansen <marius.o.hansen@gmail.com>
 * @license MIT
 * @description Easy parallax plugin using pure javascript. Cross browser support, including mobile platforms. Based on goodparallax
-* @copyright © Marius Hansen 2018
+* @copyright © Marius Hansen 2019
 */
 
 var windowHeight = window.innerHeight,
@@ -24,13 +24,13 @@ if (mobile) {
 }
 
 // position parallax
-function positionParallax(container, speed, parallax, elem) {
+var positionParallax = function positionParallax(container, speed, parallax, elem) {
 	var bgScroll = container.top / speed - windowHeightExtra;
 	parallax[elem].style.top = bgScroll + 'px';
-}
+};
 
 // animate parallax
-function animateParallax(parallax, speed) {
+var animateParallax = function animateParallax(parallax, speed) {
 	for (var i = 0; parallax.length > i; i++) {
 		var container = parallax[i].parentElement.parentElement.getBoundingClientRect();
 
@@ -38,19 +38,22 @@ function animateParallax(parallax, speed) {
 			positionParallax(container, speed, parallax, i);
 		}
 	}
-}
+};
 
 // determine height
-function calculateHeight(parallax, speed) {
+var calculateHeight = function calculateHeight(parallax, speed) {
 	for (var i = 0; parallax.length > i; i++) {
 		var container = parallax[i].parentElement.parentElement.getBoundingClientRect();
+		var containerTop = parallax[i].parentElement.parentElement.offsetTop;
 		var elemOffsetTop = (windowHeight - container.height) / 2;
-		var bgHeight = container.height + (elemOffsetTop - elemOffsetTop / speed) * 2;
+
+		// set bgHeight & check if it needs to stretch beyond container bottom
+		var bgHeight = windowHeight > container.height + containerTop ? container.height + containerTop - containerTop / speed : container.height + (elemOffsetTop - elemOffsetTop / speed) * 2;
 
 		parallax[i].style.height = bgHeight + windowHeightExtra * 2 + 'px';
 		positionParallax(container, speed, parallax, i);
 	}
-}
+};
 
 var universalParallax = function universalParallax() {
 	var up = function up(parallax, speed) {
@@ -97,7 +100,7 @@ var universalParallax = function universalParallax() {
 			var parallaxContainer = parallax[i].parentElement;
 			parallaxContainer.className += 'parallax__container';
 
-			// // parent elem need position: relative for effect to work - if not already defined, add it
+			// parent elem need position: relative for effect to work - if not already defined, add it
 			if (window.getComputedStyle(parallaxContainer.parentElement, null).getPropertyValue('position') !== 'relative') {
 				parallaxContainer.parentElement.style.position = 'relative';
 			}
@@ -108,11 +111,9 @@ var universalParallax = function universalParallax() {
 				parallax[i].style.backgroundImage = 'url(' + imgData + ')';
 				// if no other class than .parallax is specified, add CSS
 				if (parallax[i].classList.length === 1 && parallax[i].classList[0] === 'parallax') {
-					Object.assign(parallax[i].style, {
-						'background-repeat': 'no-repeat',
-						'background-position': 'center',
-						'background-size': 'cover'
-					});
+					parallax[i].style.backgroundRepeat = 'no-repeat';
+					parallax[i].style.backgroundPosition = 'center';
+					parallax[i].style.backgroundSize = 'cover';
 				}
 			}
 		};
