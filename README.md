@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/universal-parallax.svg)](https://badge.fury.io/js/universal-parallax) [![](https://data.jsdelivr.com/v1/package/npm/universal-parallax/badge?style=rounded)](https://www.jsdelivr.com/package/npm/universal-parallax)
+[![npm version](https://badge.fury.io/js/universal-parallax.svg)](https://badge.fury.io/js/universal-parallax) [![Package Quality](https://npm.packagequality.com/shield/universal-parallax.svg)](https://packagequality.com/#?package=universal-parallax) [![](https://data.jsdelivr.com/v1/package/npm/universal-parallax/badge?style=rounded)](https://www.jsdelivr.com/package/npm/universal-parallax) ![](https://img.shields.io/github/size/marrio-h/universal-parallax/dist/universal-parallax.min.js.svg?style=flat)
 
 # Universal Parallax
 Easy parallax plugin using pure javascript. Lightweight (2kb) and cross browser compatibility - including mobile platforms (iOS, Android).
