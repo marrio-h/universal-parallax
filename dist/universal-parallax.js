@@ -1,7 +1,7 @@
 'use strict';
 
 /**
-* @version 1.3.0
+* @version 1.3.1
 * @author Marius Hansen <marius.o.hansen@gmail.com>
 * @license MIT
 * @description Easy parallax plugin using pure javascript. Cross browser support, including mobile platforms. Based on goodparallax
@@ -118,7 +118,11 @@ var universalParallax = function universalParallax() {
 			}
 		};
 
-		// when init completed, run function
-		up(parallax, param.speed);
+		// when page is loaded && init completed -> run function
+		document.addEventListener('readystatechange', function (event) {
+			if (event.target.readyState === 'complete') {
+				up(parallax, param.speed);
+			}
+		});
 	};
 };

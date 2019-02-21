@@ -1,3 +1,4 @@
+
 [![npm version](https://badge.fury.io/js/universal-parallax.svg)](https://badge.fury.io/js/universal-parallax) [![Package Quality](https://npm.packagequality.com/shield/universal-parallax.svg)](https://packagequality.com/#?package=universal-parallax) [![](https://data.jsdelivr.com/v1/package/npm/universal-parallax/badge?style=rounded)](https://www.jsdelivr.com/package/npm/universal-parallax) ![](https://img.shields.io/github/size/marrio-h/universal-parallax/dist/universal-parallax.min.js.svg?style=flat)
 
 # Universal Parallax
@@ -57,6 +58,7 @@ _Choose between:_
 }
 ```
 :zap: _BG behaviour in seperate class gives more flexibility controlling them_
+:zap: _SASS version available in /dist folder_
 
 #### #2
 If `<section>` is your container, make the parallax element inside it

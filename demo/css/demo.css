@@ -7,6 +7,12 @@ body, html {
 	width: 100%;
 }
 
+body {
+	font-family: 'Source Sans Pro', helvetica, arial;
+	font-size: 18px;
+	font-weight: 300;
+}
+
 body, p, h1, h2, h3 {
 	margin: 0;
 	padding: 0;
@@ -18,22 +24,32 @@ p, h1, h2 {
 	width: 100%;
 }
 
-body {
-	font-family: 'Source Sans Pro', helvetica, arial;
-	font-size: 18px;
-	font-weight: 300;
+h1, h2 {
+	font-size: 40px;
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: -5px;
+}
+
+h1 {
+	margin-bottom: 5px;
+}
+
+h2 {
+	margin-bottom: 20px;
 }
 
 p {
-	font-size: 1em;
+	font-size: 20px;
+	font-size: 1.25rem;
+	margin-bottom: 20px;
+}
+p:last-child {
+	margin-bottom: 0;
 }
 p.p--credits {
-	font-size: .9em;
-}
-
-h1, h2 {
-	font-size: 1.5em;
-	font-weight: 700;
+	font-size: 14px;
+	font-size: .9rem;
 }
 
 a {
@@ -42,6 +58,7 @@ a {
 	text-decoration: none;
 }
 a.a--no-weight {
+	font-style: italic;
 	font-weight: 300;
 }
 
@@ -70,11 +87,11 @@ a.a--no-weight {
 	height: 40vh;
 }
 .container .content {
-	background: rgba(0, 0, 0, .6);
-	border-radius: 3px;
+	background: rgba(0, 0, 0, .75);
+	border-radius: 8px;
 	color: #fff;
 	margin: 0 auto;
-	padding: 15px 20px;
+	padding: 30px 35px;
 	text-align: center;
 }
 
