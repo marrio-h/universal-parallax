@@ -1,7 +1,7 @@
 'use strict';
 
 /**
-* @version 1.3.1
+* @version 1.3.2
 * @author Marius Hansen <marius.o.hansen@gmail.com>
 * @license MIT
 * @description Easy parallax plugin using pure javascript. Cross browser support, including mobile platforms. Based on goodparallax
