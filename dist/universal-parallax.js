@@ -34,6 +34,7 @@ var animateParallax = function animateParallax(parallax, speed) {
 	for (var i = 0; parallax.length > i; i++) {
 		var container = parallax[i].parentElement.parentElement.getBoundingClientRect();
 
+		// only animate if on screen
 		if (container.top + container.height >= 0 && container.top <= windowHeight) {
 			positionParallax(container, speed, parallax, i);
 		}
@@ -68,14 +69,14 @@ var universalParallax = function universalParallax() {
 
 		// recalculate height on resize
 		if (!mobile) {
-			window.addEventListener("resize", function () {
+			window.addEventListener('resize', function () {
 				windowHeight = window.innerHeight;
 				calculateHeight(parallax, speed);
 			});
 		}
 
 		// Add scroll event listener
-		window.addEventListener("scroll", function () {
+		window.addEventListener('scroll', function () {
 			animateParallax(parallax, speed);
 		});
 	};
